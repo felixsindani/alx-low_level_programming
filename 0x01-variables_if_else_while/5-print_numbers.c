@@ -8,7 +8,7 @@
 int main(void)/* main function*/
 {
 	int d;
-
+	
 	for (d = 0 ; d < 10 ; d++)
 		printf("%d", d);
 	printf("\n");
