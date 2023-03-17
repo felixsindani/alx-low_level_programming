@@ -1,16 +1,18 @@
-#include<stdio.h>
-
-/*
- * main - main function entry point
- * numbers starting from base 10
- * Return: Always 0 (Success)
+#include <stdlib.h>
+#include <time.h>
+/* more headers goes there */
+#include <stdio.h>
+/* betty style doc for function main goes there */
+/**
+ * main - Entry point
+ * single digit numbers of base 10
+ * Return: 0
  */
-int main(void)/* main function*/
+int main(void)
 {
 	int d;
-	
+
 	for (d = 0 ; d < 10 ; d++)
-		printf("%d", d);
-	printf("\n");
+		printf("%d\n", d);
 	return (0);
 }
