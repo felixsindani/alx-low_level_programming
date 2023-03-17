@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 /**
- * Main function - Entry point
+ * Main Function - Entryipoint
  * Program to generate random numbers
  * Return: Always 0 (Success)
  */
