@@ -4,17 +4,15 @@
 #include <stdio.h>
 /* betty style doc for function main goes there */
 /**
- * Main - Main function
- *
+ * main - main function
  * Return: Always 0
  */
 int main(void)
 {
-	int num;
+	char i;
 
-	for (num = 0; num < 10; num++)
-		putchar((num % 10) + '0');
+	for (i = 'z' ; i >= 'a' ; i--)
+		putchar(i);
 	putchar('\n');
-	/* your code goes there */
 	return (0);
 }
