@@ -1,15 +1,20 @@
-#include "main.h"
-
+#include <stdlib.h>
+#include <time.h>
+/* more headers goes there */
+#include <stdio.h>
+/* betty style doc for function main goes there */
 /**
- * main - test function that prints if interger is positive or negative
- * Return: 0
+ * positive_or_negative - entry point
+ * @n: the number to check
+ * Return: 0 (Success)
  */
-int main(void)
+void positive_or_negative(int n)
 {
-int i;
-
-i = 0;
-positive_or_negative(i);
-
-return (0);
+	/* your code goes there */
+	if (n > 0)
+		printf("%d is positive\n", n);
+	else if (n == 0)
+		printf("%d is zero\n", n);
+	else
+		printf("%d is negative\n", n);
 }
