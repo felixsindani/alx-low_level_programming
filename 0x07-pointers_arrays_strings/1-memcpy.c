@@ -5,6 +5,7 @@
  * @dest: final memory
  * @src: source memory
  * @n: size of bytes
+ * Return: dest
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
