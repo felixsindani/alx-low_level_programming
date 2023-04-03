@@ -1,23 +1,25 @@
 #include "main.h"
 
 /**
- * _strpbrk - locates first occurances
- * @accept: input
- * @s: input
+ * _strstr - finds the first occurrence of the substring
+ * @haystack: - string
+ * @needle: - substring
  * Return: 0
  */
-char *_strpbrk(char *s, char *accept)
+char *_strstr(char *haystack, char *needle)
 {
-	int b;
-
-	while (*s)
+	for (; *haystack != '\0'; haystack++)
 	{
-		for (b = 0; accept[b]; b++)
+		char *a = haystack;
+		char *b = needle;
+
+		while (*a = *b && *b != '\0')
 		{
-			if (*s == accept[b])
-				return (s);
+			a++;
+			b++;
 		}
-		s++;
+		if (*b == '\0')
+			return (haystack);
 	}
-	return ('\0');
+	return (0);
 }
