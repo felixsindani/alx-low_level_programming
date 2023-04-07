@@ -10,12 +10,12 @@ int check_prime(int n, int v);
  */
 int prime(int n, int v)
 {
-        if (n <= 1)
-                return (0);
-        if (n % v == 0 && v > 1)
-                return (0);
-        if ((n / v) < v)
-                return (prime(n, v + 1));
+	if (n <= 1)
+		return (0);
+	if (n % v == 0 && v > 1)
+		return (0);
+	if ((n / v) < v)
+		return (prime(n, v + 1));
 	return (v);
 }
 
