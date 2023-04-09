@@ -5,11 +5,8 @@
  * @argv: - vector
  * Return: 0
  */
-int main(int argc, char *argv[])
+int main(int argc __attribute__ ((unused)), char __attribute__ ((unused)) *argv[])
 {
-	int b;
-
-	for (b = 0; b < argc; b++)
-		printf("%d %s\n", b, argv[b]);
+	printf("%s\n", *argv);
 	return (0);
 }
