@@ -3,4 +3,5 @@
 int main(argc, char *argv[]);
 int _putchar(char c);
 int _atoi(char *s);
+int main();
 #endif
