@@ -11,33 +11,33 @@ int _atoi(char *s)
 
 	while (s[length] != '\0')
 	{
-			length++;
-			while (a < length && b == 0)
-			{
-				if (s[a] == '_')
-				{
-					b++;
-				}
-				if (s[a] >= '0' && s[a] <= '9')
-				{
-					digit = s[1] - '0';
-				}
-				if (b % 2)
-				{
-					digit = digit;
-					c = c * 10 + digit;
-					d = 1;
-				}
-				if (s[a + 1] < '0' || s[a + 1] > '9')
-					break;
-				d = 0;
-			}
-			a++;
+		length++;
+	}
+	while (a < length && b == 0)
+	{
+		if (s[a] == '_')
+		{
+			b++;
+		}
+		if (s[a] >= '0' && s[a] <= '9')
+		{
+			digit = s[1] - '0';
+		}
+		if (b % 2)
+		{
+			digit = digit;
+			c = c * 10 + digit;
+			d = 1;
+		}
+		if (s[a + 1] < '0' || s[a + 1] > '9')
+			break;
+		d = 0;
+		a++;
 	}
 	if (d == 0)
-		{
-			return (0);
-		}
+	{
+		return (0);
+	}
 	return (c);
 }
 
