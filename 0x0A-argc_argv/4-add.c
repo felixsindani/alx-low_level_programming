@@ -1,54 +1,20 @@
 #include <stdio.h>
-#include <ctype.h>
-#include <string.h>
+#include <stdlib.h>
 
-/**
- * check_num - check for digits
- * @str: string
- * Return: 0
- */
-int check_num(char *str)
+int main(int __attribute__ ((unused)) argc, char *argv[])
 {
-	unsigned int counter;
-
-	counter = 0;
-	while (counter < strlen(*str[counter]))
+	int output, counter;
+	output = 0;
+	for (counter = 1; argv[counter] != NULL; ++counter)
 	{
-		if (!isdigit(*str[counter]))
+		char *ptr;
+		output += strtol(argv[counter], &ptr, 10);
+		if (*ptr != '\0')
 		{
-			return (0);
+			printf("Error\n");
+			return (1);
 		}
-		counter++;
 	}
-	return (1);
-}
-/**
- * main - prints name
- * @argc: counts arguments
- * @argv: Arguments vector
- * Return: 0
- */
-int main(int argc, char *argv[])
-{
-	int counter;
-	int str_to_int;
-	int sum = 0;
-
-	counter = 1;
-	while (counter < argc)
-	{
-		if (check_num(argv[counter]))
-		{
-			str_to_int = atoi(argv[counter]);
-			sum += str_to_int;
-		}
-		else
-		{
-		printf("error\n");
-		return (1);
-		}
-		counter++;
-	}
-	printf("%d\n", sum);
+	printf("%d\n", output);
 	return (0);
 }
