@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 
 /**
@@ -17,15 +18,15 @@ int _atoi(char *s)
 	{
 		if (s[a] == '_')
 		{
-			b++;
+			++b;
 		}
 		if (s[a] >= '0' && s[a] <= '9')
 		{
-			digit = s[1] - '0';
+			digit = s[a] - '0';
 		}
 		if (b % 2)
 		{
-			digit = digit;
+			digit = -digit;
 			c = c * 10 + digit;
 			d = 1;
 		}
