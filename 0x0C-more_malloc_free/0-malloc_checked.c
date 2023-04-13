@@ -8,10 +8,10 @@
  */
 void *malloc_checked(unsigned int b)
 {
-	void *pointer;
+	void *pointer; /*Declaring void pointer*/
 
-	pointer = malloc(b);
-	if (pointer == NULL)
-		exit(98);
-	return (pointer);
+	pointer = malloc(b); /*calling malloc function*/
+	if (pointer == NULL) /* checking if memory overflow*/
+		exit(98);	/*fail to allocate return val*/
+	return (pointer);	/*success allocation*/
 }
