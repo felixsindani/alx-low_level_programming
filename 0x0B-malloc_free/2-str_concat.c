@@ -38,6 +38,7 @@ char *str_concat(char *s1, char *s2)
 			b++;
 		}
 		s3[a] = '\0';
+		return (s3);
 	}
 	return (s3);
 }
