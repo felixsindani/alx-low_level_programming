@@ -1,14 +1,12 @@
 #ifndef DOG_H
 #define DOG_H
-#include <stdio.h>
 
 /**
- * struct - user defined data type
- * @name: char data type variable
- * @age: float data type variable
- * @owner: char data type variable
- *
- * struct dog struct dog: user defined name to store different data kinds
+ * struct dog - struct for dog
+ * @name: name of dog
+ * @age: float data type variable storing age
+ * @owner: owner of dog
+ * Description: struct for a dog
  */
 struct dog
 {
@@ -16,4 +14,10 @@ struct dog
 	float age;
 	char *owner;
 };
+
+typedef struct dog dog_t;
+void free_dog(dog_t *d);
+void init_dog(struct dog *d, char *name, float age, char *owner);
+void print_dog(struct dog *d);
+dog_t *new_dog(char *name, float age, char *owner);
 #endif
