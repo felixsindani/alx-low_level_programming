@@ -5,7 +5,7 @@
  * init_dog - function to initialise struct
  * @name: variable to store name of dog
  * @age: Variable to store age of dog
- * #owner: variable to store owner of dog
+ * @owner: variable to store owner of dog
  * @d: struct dog
  * Return: NULL
  */
