@@ -5,7 +5,7 @@
  * @s: operator passed as argument
  * Return: pointer to operator function
  */
-int (*get_op_func(char *s))(int, int)
+int (*get_op_func(__attribute__((__unused__))char *s))(int, int)
 {
 	op_t ops[] = {
 		{"+", op_add},
@@ -17,7 +17,7 @@ int (*get_op_func(char *s))(int, int)
 	};
 	int index = 0;
 
-	while (ops[index].op != NULL && *(ops[index].op) != *s)
+	while (ops[index]op != NULL && *(ops[index]op) != *s)
 		index++;
-	return (ops[index].f);
+	return (ops[index]f);
 }
