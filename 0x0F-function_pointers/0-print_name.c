@@ -10,6 +10,6 @@ void print_name(char *name, void (*f)(char *));
 void print_name(char *name, void (*f)(char *))
 {
 	while (name == NULL || f == NULL)
-		break;
+		return;
 	f(name);
 }
