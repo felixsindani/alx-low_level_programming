@@ -11,8 +11,8 @@ int sum_them_all(const unsigned int n, ...)
 	va_list Var_name; /*declaring variadic variable*/
 	unsigned int a;
 	int sum = 0;
-	
-	va_start(Var_name, n); /*initialising the var function*/
+
+	va_start(Var_name, n);/*initialising the var function*/
 	for (a = 0; a < n; a++)
 	{
 		sum += va_arg(Var_name, int); /*Retrieving value of arguments at indexes*/
