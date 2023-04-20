@@ -1,5 +1,5 @@
-#ifndef "variadic_functions.h"
-#define "variadic_functions.h"
+#ifndef VAR_FUNCTIONS_H
+#define VAR_FUNCTIONS_H
 
 #include <stdio.h>
 #include <stdlib.h>
