@@ -40,4 +40,5 @@ void print_all(const char * const format, ...)
 			a++;
 		}
 	}
+	va_end(var_name);
 }
