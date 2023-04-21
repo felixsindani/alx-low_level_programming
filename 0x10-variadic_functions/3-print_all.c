@@ -1,9 +1,9 @@
 #include "variadic_functions.h"
 
 /**
-* print_all - printing function
-* @format: number of arguments
-*/
+ * print_all - printing function
+ * @format: number of arguments
+ */
 void print_all(const char * const format, ...)
 {
 	int a = 0;
@@ -30,7 +30,7 @@ void print_all(const char * const format, ...)
 					string = va_arg(var_name, char *);
 					if (!string)
 						string = "(nil)";
-					printf("%s%s", vsr, string);
+					printf("%s%s\n", vsr, string);
 					break;
 				default:
 					a++;
