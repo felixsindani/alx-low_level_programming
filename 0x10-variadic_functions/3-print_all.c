@@ -39,6 +39,6 @@ void print_all(const char * const format, ...)
 			vsr = ",";
 			a++;
 		}
-		va_end(var_name);
 	}
+	va_end(var_name);
 }
