@@ -38,9 +38,9 @@ int main(int argc, char *argv[])
 		}
 		reading = read(old, fp, 1024);
 		new = open(argv[2], O_WRONLY | O_APPEND);
-	}
-	while (reading > 0);
-		free(fp);
+		/* open write only file then append text */
+	} while (reading > 0);
+	free(fp);
 	close_file(old);
 	close_file(new);
 	return (0);
@@ -72,6 +72,7 @@ char *create_buffer(char *filename)
 	char *fp;
 
 	fp = malloc(sizeof(char) * 1024);
+	/* allocating 1024 bytes for pointer to filename*/
 	if (!fp)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
