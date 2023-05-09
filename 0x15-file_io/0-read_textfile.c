@@ -10,7 +10,7 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	size_t fd, read_letters, write_letters;
+	ssize_t fd, read_letters, write_letters;
 	char *fp; /* pointer to file */
 
 	fd = open(filename, O_RDONLY);
