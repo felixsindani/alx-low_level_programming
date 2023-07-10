@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  * create_buffer - creates buffer with 1024bytes
  * @flename: filename
@@ -46,7 +46,7 @@ void close_fd(int fd)
  */
 int main(int argc, char *argv[])
 {
-	int from, to, r, w;
+	int from, to, w, r;
 	char *buffer;
 
 	if (argc != 3)
@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
 			exit(98);
 		}
 		w = write(to, buffer, r);
-		if (to == -1)
+		if (to == -1 || w == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			free(buffer);
