@@ -3,7 +3,7 @@
 #include <stdio.h>
 /**
  * create_buffer - creates buffer with 1024bytes
- * @flename: filename
+ * @file: filename
  * Return: pointer to created buffer
  */
 char *create_buffer(char *file);
