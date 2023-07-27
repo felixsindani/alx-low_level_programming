@@ -8,13 +8,13 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	int a, count;
-	unsigned long int exl = n ^ m;
+	int a, count = 0;
+	unsigned long int exclusive = n ^ m;
 	unsigned long int now_number;
 
 	for (a = 63; a >= 0; a--)
 	{
-		now_number = exl >> a;
+		now_number = exclusive >> a;
 		if (now_number & 1)
 			count++;
 	}
