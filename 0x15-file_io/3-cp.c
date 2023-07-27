@@ -1,28 +1,32 @@
 #include "main.h"
+#include <stdlib.h>
 #include <stdio.h>
 /**
  * create_buffer - creates buffer with 1024bytes
  * @flename: filename
  * Return: pointer to created buffer
  */
-char *create_buffer(char *filename)
+char *create_buffer(char *file);
+void close_file(int fd);
+
+char *create_buffer(char *file)
 {
 	char *buffer;
 
 	buffer = malloc(sizeof(char) * 1024);
-	if (!buffer)
+	if (buffer == NULL)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
 		exit(99);
 	}
 	return (buffer);
 }
 
 /**
- * close_fd - closes fd
+ * close_file- closes fd
  * @fd: fd to be closed
  */
-void close_fd(int fd)
+void close_file(int fd)
 {
 	int a;
 
@@ -77,7 +81,7 @@ int main(int argc, char *argv[])
 	}
 	while (r > 0);
 	free(buffer);
-	close_fd(from);
-	close_fd(to);
+	close_file(from);
+	close_file(to);
 	return (0);
 }
