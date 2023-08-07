@@ -203,25 +203,25 @@ void print_e_type(unsigned int e_type, unsigned char *e_ident)
 
 /**
  * print_elf_entry - it Prints entry point of an ELF header.
- * @elf_entry_point: ELF entry point address.
+ * @e_entry: ELF entry point address.
  * @e_ident: array containing the ELF class.
  */
-void print_entry_point(unsigned long int elf_entry_point, unsigned char *e_ident)
+void print_entry_point(unsigned long int e_entry, unsigned char *e_ident)
 {
 	printf("  Entry point address:               ");
 
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 	{
-		elf_entry_point = ((elf_entry_point << 8) & 0xFF00FF00) |
-			  ((elf_entry_point >> 8) & 0xFF00FF);
-		elf_entry_point = (elf_entry_point << 16) | (elf_entry_point >> 16);
+		e_entry = ((e_entry << 8) & 0xFF00FF00) |
+			  ((e_entry >> 8) & 0xFF00FF);
+		e_entry = (e_entry << 16) | (e_entry >> 16);
 	}
 
 	if (e_ident[EI_CLASS] == ELFCLASS32)
-		printf("%#x\n", (unsigned int)elf_entry_point);
+		printf("%#x\n", (unsigned int)e_entry);
 
 	else
-		printf("%#lx\n", elf_entry_point);
+		printf("%#lx\n", e_entry);
 }
 
 /**
@@ -260,7 +260,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	header = malloc(sizeof(Elf64_Ehdr));
 	if (header == NULL)
 	{
-		close_elf(a);
+		close_elf_file(a);
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		exit(98);
 	}
@@ -268,7 +268,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	if (b == -1)
 	{
 		free(header);
-		close_elf(a);
+		close_elf_file(a);
 		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
 		exit(98);
 	}
@@ -282,7 +282,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	print_elf_osabi(header->e_ident);
 	print_elf_abi(header->e_ident);
 	print_e_type(header->e_type, header->e_ident);
-	print_entry_point(header->elf_entry_point, header->e_ident);
+	print_entry_point(header->e_entry, header->e_ident);
 
 	free(header);
 	close_elf_file(a);
