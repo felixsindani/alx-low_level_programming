@@ -4,8 +4,8 @@
  *@dest: ptr to destination string
  *@src: ptr to source string
  *@n: number of bytes to be concatenated
- Return: pointer to destination string.
- */
+Return: pointer to destination string.
+*/
 char *_strncat(char *dest, char *src, int n)
 {
 	int string_len, i;
